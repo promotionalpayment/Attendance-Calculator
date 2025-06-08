@@ -30,3 +30,8 @@ bin/
 
 *.iml
 .idea/
+
+### Class files ###
+*.class
+
+attendance.csv
