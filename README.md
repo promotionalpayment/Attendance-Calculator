@@ -1,4 +1,5 @@
 Java Attendance Tracker (CLI)
+---------
 
 A simple Java-based command-line tool to manage and track subject-wise attendance using CSV files for data persistence.
 
@@ -8,6 +9,7 @@ Features
 - Add subject attendance records
 - View overall attendance percentages
 - View individual subject attendance
+- View the required number of classes to be attend to achieve 75% attendance.
 - Data stored in `attendance.csv`
 - Input validation for consistency
 - Structured and formatted console output
@@ -24,9 +26,9 @@ Project Structure
 
 ├── Main.java
 
-├── csvread.java
+├── csvread.java 
 
-├── csvwriting.java
+├── csvwriting.java 
 
 ├── attendance_percentage.java
 
@@ -43,47 +45,68 @@ How to Use
 
 1. Compile the Project
 
-    build.bat
+        .\build.bat
 
     This will compile all `.java` source files.
 
 2. Run Commands
 
-    Add a new subject
+    - **Add a new subject**
 
-    run.bat add <subject_name> <attended_classes> <total_classes>
+            **.\run.bat add** <subject_name> <attended_classes> <total_classes> 
 
-    Example:
-    run.bat add Physics 20 28
+        **Example:**
+    
+            .\run.bat add Physics 20 28
 
-    Show attendance for all subjects
+    - **Show attendance:-** 
+    
+       *For all subjects:*
 
-    run.bat sp
+            .\run.bat sp
 
-    Show attendance for a specific subject
+      *For a specific subject*
 
-    run.bat sp <subject_name>
+            .\run.bat sp <subject_name>
 
-    Example:
-    run.bat sp Math
+        **Example:**
+            
+            .\run.bat sp Math
+    - **Show Classes required for 75% attendance**:-
+        
+        ***Shows the number of classes required to achieve 75% attendance.***
+
+            .\run.bat rq
+                  
+    - **Update**:-
+        
+        Update the attended class count and the total class count with :
+            
+            .\run.bat update <subject_name> <new_attended_count> <new_total_count> 
+        **Example:**
+        
+            .\run.bat chem 89 90          
+    - **Remove Subjects**:
+        
+            .\run.bat remove <subject_name>
 
 Sample Output
 -------------
 
-![App Screenshot](./imgs/img.png)
+![App Screenshot](imgs/img_1.png)
 
 Notes
 -----
 
 - Input is validated to ensure `attended <= total`.
 - Subject names are case-sensitive.
-- Output formatting can be enhanced with visual elements like progress bars.
+- Used a math formula to calculate the classes required to achieve 75% attendance
+
 
 Future Enhancements (Optional)
 ------------------------------
 - Web scrapping my college website to track attendance (Main)
-- Overhaul of the current output formatting
-- Support for deleting/updating records
+
 - Platform-independent CLI runner (replace `.bat` with shell scripts or a unified launcher)
 
-
+---------------------------------
